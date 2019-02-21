@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +35,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Kishan", Snackbar.LENGTH_LONG)
-                        .setAction("Done", null).show();
+                        .setAction("Tap", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(MainActivity.this, "Clicked From Snack Bar", Toast.LENGTH_SHORT).show();
+                            }
+                        }).show();
             }
         });
     }
